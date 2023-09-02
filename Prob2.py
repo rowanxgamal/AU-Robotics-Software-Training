@@ -18,7 +18,7 @@ def countWords(speech):
 def countLetters(speech):
     letters=0
     for i in speech:
-        if(i!=' ' and i!='.' and i!='?' and i!='!'):
+        if(i!=' ' and i!='.' and i!='?' and i!='!' and i!=','):
             letters+=1
     return letters
 
@@ -27,5 +27,13 @@ sentences=countSentences(speech)
 words=countWords(speech)
 letters=countLetters(speech)
 
-#Formula: 5.89 x (characters/words) – 0.3 x (sentences/words) – 15.8
-print("Output: ",int(5.89*(letters/words)-0.3*(sentences/words)-15.8+0.5))
+#letters=letters/words*100
+grade=0.0588*(letters/words*100)-0.296*(sentences/words*100)-15.8
+grade=round(grade)
+if grade<1:
+    print("Output: Before Grade 1")
+elif grade>=16:
+    print("Output: Grade 16+")
+else:
+    print("Output: ",grade)
+print(sentences," ",words," ",letters)
