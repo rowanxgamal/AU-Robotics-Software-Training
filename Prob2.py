@@ -18,7 +18,7 @@ def countWords(speech):
 def countLetters(speech):
     letters=0
     for i in speech:
-        if(i!=' ' and i!='.' and i!='?' and i!='!' and i!=','):
+        if(i!=' ' and i!='.' and i!='?' and i!='!' and i!=',' and i!='\''):
             letters+=1
     return letters
 
